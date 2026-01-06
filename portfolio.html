@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Işıl Ülger | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-main: #070F2B;
+      --bg-card: #1B1A55;
+      --accent: #535C91;
+      --primary: #9290C3;
+      --text-main: #EDEDFC;
+      --text-muted: #B6B6E3;
+      --border: rgba(255,255,255,0.08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--bg-card);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 0;
+    }
+
+    .container {
+      width: 85%;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* HERO */
+    #hero {
+      padding: 90px 0;
+      background: linear-gradient(135deg, var(--bg-card), var(--bg-main));
+    }
+
+    .hero-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .hero-text {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      text-align: left;
+    }
+
+    .hero-text h1 {
+      font-size: 44px;
+    }
+
+    .hero-text p {
+      font-size: 18px;
+      color: var(--text-muted);
+    }
+
+    .hero-image {
+      flex: 1;
+      text-align: center;
+    }
+
+    .hero-image img {
+      max-width: 100%;
+      max-height: 320px;
+      height: auto;
+      image-rendering: pixelated;
+      image-rendering: crisp-edges;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      margin: 6px 8px 0 0;
+      padding: 12px 26px;
+      background: var(--primary);
+      color: #070F2B;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: 600;
+      transition: 0.25s;
+    }
+
+    .btn-primary:hover {
+      background: #A6A4E0;
+      transform: translateY(-3px);
+    }
+
+    /* CURRENTLY LEARNING */
+    .currently-learning {
+      margin-top: 10px;
+      background: var(--bg-card);
+      padding: 18px 20px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      max-width: 340px;
+      align-self: flex-start;
+    }
+
+    .currently-learning h3 {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .learning-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 8px;
+      background: rgba(255,255,255,0.12);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-top: 6px;
+    }
+
+    .progress {
+      height: 100%;
+      width: 0%;
+      background: var(--primary);
+      transition: width 0.4s ease;
+    }
+
+    section {
+      padding: 70px 0;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
+
+    .skills-list,
+    .project-list,
+    .experience-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      padding: 24px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: var(--primary);
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .contact {
+      text-align: center;
+      font-size: 18px;
+      color: var(--text-muted);
+    }
+    .contact a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
+
+    footer {
+      padding: 20px 0;
+      text-align: center;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-text {
+        align-items: center;
+        text-align: center;
+      }
+
+      .currently-learning {
+        align-self: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <strong>Işıl Ülger</strong>
+    </nav>
+  </div>
+</header>
+
+<section id="hero">
+  <div class="container hero-content">
+
+    <div class="hero-text">
+      <h1>Işıl Ülger</h1>
+      <p>Computer Engineer | AI & Data Science Enthusiast</p>
+
+      <div>
+        <a href="#projects" class="btn-primary">Projects</a>
+        <a href="#skills" class="btn-primary">Skills</a>
+        <a href="#experience" class="btn-primary">Experience</a>
+        <a href="#contact" class="btn-primary">Contact</a>
+      </div>
+
+      <div class="currently-learning">
+        <h3>Currently Learning</h3>
+
+        <div class="learning-header">
+          <span>JavaScript</span>
+          <span>0%</span>
+        </div>
+
+        <div class="progress-bar">
+          <div class="progress" style="width: 0%;"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <img src="image.gif" width="400" height="260" alt="Girl illustration">
+    </div>
+
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <h2>About Me</h2>
+    <p style="text-align:center; max-width:700px; margin:auto;">
+      I am a motivated computer engineer with experience in backend development,
+      data science workflows, and automation.
+    </p>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="container">
+    <h2>Skills</h2>
+    <div class="skills-list">
+      <div class="card"><h3>Programming</h3><p>Python, C++, C, SQL, React Native, HTML, CSS</p></div>
+      <div class="card"><h3>Backend</h3><p>Flask, REST APIs, PostgreSQL, Firebase</p></div>
+      <div class="card"><h3>Data Science</h3><p>Pandas, Scikit-learn, ML Models</p></div>
+      <div class="card"><h3>Tools</h3><p>Docker, GitHub Actions, Azure</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <h2>Projects</h2>
+    <div class="project-list">
+      <div class="card"><h3>Environmental Pollution Prediction</h3><p>ML-based pollution forecasting using Random Forest and Regression.</p>
+      <a href="https://github.com/isilulgerr/Environmental_Pollution_Prediction"
+     target="_blank"
+     class="btn-primary">
+     View Project
+  </a></div>
+      <div class="card"><h3>AI Travel Planner</h3><p>Personalized itineraries using AI.</p>
+      <p style="font-size:13px; opacity:0.6; margin-top:8px;">
+  Academic project · Repository private
+</p>
+</div>
+      <div class="card"><h3>Hotel Booking System</h3><p>Microservices-based hotel reservation system with AI Assistant.</p>
+      <a href="https://github.com/isilulgerr/hotel-booking-final"
+     target="_blank"
+     class="btn-primary">
+     View Project
+  </a></div>
+  <div class="card"><h3>Intelligent Solar Energy Systems</h3><p>An intelligent solar energy system using Arduino, integrating sensors, actuators.</p>
+  <a href="https://github.com/isilulgerr/solar_project"
+     target="_blank"
+     class="btn-primary">
+     View Project
+  </a></div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="container">
+    <h2>Experience</h2>
+    <div class="experience-list">
+
+  <div class="card">
+    <h3>BMC Otomotiv – IT Intern</h3>
+    <ul class="experience-points">
+      <li>Collaborated with a cross-functional team of four on IT projects.</li>
+      <li>Identified process improvement opportunities.</li>
+      <li>Developed an automated reporting system using C# and SQL.</li>
+      <li>Reduced report generation time and improved data accuracy.</li>
+      <li>Contributed to automation and digitalization initiatives.</li>
+      <li>Supported reporting, data analysis, and workflow management.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Yaşar University – TA (Undergraduate)</h3>
+    <ul class="experience-points">
+      <li>Conducted lab sessions and tutorials for Computer Engineering students.</li>
+      <li>Assisted with programming assignments and debugging.</li>
+      <li>Supported understanding of core computer engineering concepts.</li>
+    </ul>
+  </div>
+
+</div>
+
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <h2>Contact</h2>
+    <p class="contact">
+      📧 <a href="mailto:isilulgerr@gmail.com">isilulgerr@gmail.com</a> ·
+      <a href="https://github.com/isilulgerr" target="_blank">GitHub</a> ·
+      <a href="https://linkedin.com/in/isil-ulger" target="_blank">LinkedIn</a>
+    </p>
+  </div>
+</section>
+
+
+<footer>
+  © 2025 Işıl Ülger
+</footer>
+
+</body>
+</html>
